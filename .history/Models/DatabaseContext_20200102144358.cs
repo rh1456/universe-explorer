@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace HarryPotterApi.Models
+namespace universe_explorer.Models
 {
   public partial class DatabaseContext : DbContext
   {

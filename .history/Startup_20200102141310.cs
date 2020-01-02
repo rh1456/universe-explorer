@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using HarryPotterApi.Models;
+using universe_explorer.Models;
 
 namespace universe_explorer
 {
