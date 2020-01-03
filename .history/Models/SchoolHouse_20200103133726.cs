@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-
 namespace HarryPotterApi.Models
 {
   public class SchoolHouse
