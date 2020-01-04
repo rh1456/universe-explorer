@@ -41,7 +41,7 @@ namespace HarryPotterApi.Controllers
     public ActionResult UpdateSchoolHouse(SchoolHouse schoolhouse)
     {
       var db = new DatabaseContext();
-      var prevSchoolHouse = db.SchoolHouses.FirstOrDefault(schoolhouse => schoolhouse.Id == schoolhouse.Id);
+      var prevSchoolHouse = db.SchoolHouses.FirstOrDefault(schoolhouse => schoolhouse.Id == id);
       if (prevSchoolHouse == null)
       {
         return NotFound();
@@ -50,24 +50,6 @@ namespace HarryPotterApi.Controllers
       {
         prevSchoolHouse.HouseName = schoolhouse.HouseName;
         prevSchoolHouse.Color = schoolhouse.Color;
-        db.SaveChanges();
-        return Ok(prevSchoolHouse);
-      }
-    }
-    [HttpDelete("{id}")]
-    public ActionResult DeleteSchoolHouse(int id)
-    {
-      var db = new DatabaseContext();
-      var schoolhouse = db.SchoolHouses.FirstOrDefault(schoolhouse => schoolhouse.Id == schoolhouse.Id);
-      if (schoolhouse == null)
-      {
-        return NotFound();
-      }
-      else
-      {
-        db.SchoolHouses.Remove(schoolhouse);
-        db.SaveChanges();
-        return Ok();
       }
     }
   }
