@@ -16,12 +16,9 @@ namespace HarryPotterApi.Controllers
       return Ok(db.Students);
     }
     [HttpPost]
-    public ActionResult CreateStudent(Student student)
+    public ActionResult CreateStudent()
     {
-      var db = new DatabaseContext();
-      db.Students.Add(student);
-      db.SaveChanges();
-      return Ok(student);
+
     }
   }
 }
