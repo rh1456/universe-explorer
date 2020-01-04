@@ -48,11 +48,7 @@ namespace HarryPotterApi.Controllers
       }
       else
       {
-        prevStudent.FullName = student.FullName;
-        prevStudent.PlaysQuidditch = student.PlaysQuidditch;
-        prevStudent.HouseAffiliation = student.HouseAffiliation;
-        db.SaveChanges();
-        return Ok(prevStudent);
+        return Ok(student);
       }
     }
   }

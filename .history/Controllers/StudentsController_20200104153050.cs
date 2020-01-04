@@ -41,18 +41,14 @@ namespace HarryPotterApi.Controllers
     public ActionResult UpdateStudent(Student student)
     {
       var db = new DatabaseContext();
-      var prevStudent = db.Students.FirstOrDefault(student => student.Id == student.Id);
+      var prevStudent = db.Students.FirstOrDefault(student => student.Id == id);
       if (prevStudent == null)
       {
         return NotFound();
       }
       else
       {
-        prevStudent.FullName = student.FullName;
-        prevStudent.PlaysQuidditch = student.PlaysQuidditch;
-        prevStudent.HouseAffiliation = student.HouseAffiliation;
-        db.SaveChanges();
-        return Ok(prevStudent);
+        return Ok(student);
       }
     }
   }
