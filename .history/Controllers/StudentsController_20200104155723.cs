@@ -59,16 +59,18 @@ namespace HarryPotterApi.Controllers
     public ActionResult DeleteStudent(int id)
     {
       var db = new DatabaseContext();
-      var student = db.Students.FirstOrDefault(student => student.Id == student.Id);
-      if (student == null)
+      var prevStudent = db.Students.FirstOrDefault(student => student.Id == student.Id);
+      if (prevStudent == null)
       {
         return NotFound();
       }
       else
       {
-        db.Students.Remove(student);
+        prevStudent.FullName = student.FullName;
+        prevStudent.PlaysQuidditch = student.PlaysQuidditch;
+        prevStudent.HouseAffiliation = student.HouseAffiliation;
         db.SaveChanges();
-        return Ok();
+        return Ok(prevStudent);
       }
     }
   }

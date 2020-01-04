@@ -55,21 +55,10 @@ namespace HarryPotterApi.Controllers
         return Ok(prevStudent);
       }
     }
-    [HttpDelete("{id}")]
+    [HttpDelete]
     public ActionResult DeleteStudent(int id)
     {
-      var db = new DatabaseContext();
-      var student = db.Students.FirstOrDefault(student => student.Id == student.Id);
-      if (student == null)
-      {
-        return NotFound();
-      }
-      else
-      {
-        db.Students.Remove(student);
-        db.SaveChanges();
-        return Ok();
-      }
+
     }
   }
 }

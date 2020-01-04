@@ -66,9 +66,11 @@ namespace HarryPotterApi.Controllers
       }
       else
       {
-        db.Students.Remove(student);
+        prevStudent.FullName = student.FullName;
+        prevStudent.PlaysQuidditch = student.PlaysQuidditch;
+        prevStudent.HouseAffiliation = student.HouseAffiliation;
         db.SaveChanges();
-        return Ok();
+        return Ok(prevStudent);
       }
     }
   }
