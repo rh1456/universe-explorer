@@ -5,8 +5,6 @@ using HarryPotterApi.Models;
 
 namespace HarryPotterApi.Controllers
 {
-  [ApiController]
-  [Route("api/[controller]")]
   public class StudentController : ControllerBase
   {
 
