@@ -29,13 +29,5 @@ namespace HarryPotterApi.Controllers
         return Ok(schoolhouse);
       }
     }
-    [HttpPost]
-    public ActionResult CreateSchoolHouse(SchoolHouse schoolhouse)
-    {
-      var db = new DatabaseContext();
-      db.SchoolHouses.Add(schoolhouse);
-      db.SaveChanges();
-      return Ok(schoolhouse);
-    }
   }
 }

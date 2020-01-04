@@ -20,22 +20,6 @@ namespace HarryPotterApi.Controllers
     {
       var db = new DatabaseContext();
       var schoolhouse = db.SchoolHouses.FirstOrDefault(schoolhouse => schoolhouse.Id == id);
-      if (schoolhouse == null)
-      {
-        return NotFound();
-      }
-      else
-      {
-        return Ok(schoolhouse);
-      }
-    }
-    [HttpPost]
-    public ActionResult CreateSchoolHouse(SchoolHouse schoolhouse)
-    {
-      var db = new DatabaseContext();
-      db.SchoolHouses.Add(schoolhouse);
-      db.SaveChanges();
-      return Ok(schoolhouse);
     }
   }
 }

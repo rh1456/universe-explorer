@@ -15,19 +15,10 @@ namespace HarryPotterApi.Controllers
       var db = new DatabaseContext();
       return Ok(db.Students);
     }
-    [HttpGet("{id}")]
+    [HttpGet]
     public ActionResult GetOneStudent(int id)
     {
-      var db = new DatabaseContext();
-      var student = db.Students.FirstOrDefault(student => student.Id == id);
-      if (student == null)
-      {
-        return NotFound();
-      }
-      else
-      {
-        return Ok(student);
-      }
+
     }
     [HttpPost]
     public ActionResult CreateStudent(Student student)
