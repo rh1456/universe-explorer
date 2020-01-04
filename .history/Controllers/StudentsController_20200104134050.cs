@@ -7,13 +7,13 @@ namespace HarryPotterApi.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
-  public class SchoolHouseController : ControllerBase
+  public class StudentController : ControllerBase
   {
     [HttpGet]
-    public ActionResult GetAllHouses()
+    public ActionResult GetAllStudent()
     {
-      var db = new DatabaseContext();
-      return Ok(db.SchoolHouses);
+
     }
   }
 }
+
