@@ -2,7 +2,6 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HarryPotterApi.Models;
-using HarryPotterApi.ViewModels;
 
 namespace HarryPotterApi.Controllers
 {

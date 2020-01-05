@@ -12,6 +12,6 @@ namespace HarryPotterApi.Models
 
     public int SchoolHouseId { get; set; }
 
-    public SchoolHouse SchoolHouse { get; set; }
+    public Student Students { get; set; }
   }
 }

@@ -1,10 +1,7 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-
-namespace HarryPotterApi.Models
+namespace HarryPotterApi.ViewModels
 {
-  public class Student
+  public class CreatedStudent
   {
     public int Id { get; set; }
     public string FullName { get; set; }
@@ -12,6 +9,5 @@ namespace HarryPotterApi.Models
 
     public int SchoolHouseId { get; set; }
 
-    public SchoolHouse SchoolHouse { get; set; }
   }
 }

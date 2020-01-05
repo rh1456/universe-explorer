@@ -31,36 +31,24 @@ namespace HarryPotterApi.Controllers
       }
     }
     [HttpPost]
-    public ActionResult CreateStudent(NewStudent viewModel)
+    public ActionResult CreateStudent(NewStudent vm)
     {
       var db = new DatabaseContext();
-      var schoolhouse = db.SchoolHouses
-        .FirstOrDefault(schoolhouse => schoolhouse.Id == viewModel.SchoolHouseId);
-      if (schoolhouse == null)
+      student.Id = 0;
+      var student = db.Students.FirstOrDefault(student => student.Id == vm.StudentId);
+      if (student == null)
       {
         return NotFound();
       }
       else
       {
-        var student = new Student
+        var list = new Student
         {
-          FullName = viewModel.FullName,
-          PlaysQuidditch = viewModel.PlaysQuidditch,
-          SchoolHouseId = viewModel.SchoolHouseId
+          FullName = vm.FullName,
+          StudentId = vm.StudentId
         };
-        db.Students.Add(student);
-        db.SaveChanges();
-        var rv = new CreatedStudent
-        {
-          Id = student.Id,
-          PlaysQuidditch = student.PlaysQuidditch,
-          SchoolHouseId = student.SchoolHouseId
-
-        };
-        return Ok(rv);
       }
     }
-
     [HttpPut("{id}")]
     public ActionResult UpdateStudent(Student student)
     {
@@ -74,6 +62,7 @@ namespace HarryPotterApi.Controllers
       {
         prevStudent.FullName = student.FullName;
         prevStudent.PlaysQuidditch = student.PlaysQuidditch;
+        prevStudent.HouseAffiliation = student.HouseAffiliation;
         db.SaveChanges();
         return Ok(prevStudent);
       }
@@ -96,5 +85,4 @@ namespace HarryPotterApi.Controllers
     }
   }
 }
-
 

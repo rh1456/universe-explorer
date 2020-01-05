@@ -10,7 +10,6 @@ namespace HarryPotterApi.Models
     public string HouseName { get; set; }
     public string Color { get; set; }
 
-
     public List<Student> Students { get; set; }
       = new List<Student>();
 

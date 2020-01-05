@@ -42,22 +42,12 @@ namespace HarryPotterApi.Controllers
       }
       else
       {
-        var student = new Student
+        var student = new SchoolHouse
         {
-          FullName = viewModel.FullName,
-          PlaysQuidditch = viewModel.PlaysQuidditch,
+          HouseName = viewModel.HouseName,
+          Color = viewModel.Color,
           SchoolHouseId = viewModel.SchoolHouseId
         };
-        db.Students.Add(student);
-        db.SaveChanges();
-        var rv = new CreatedStudent
-        {
-          Id = student.Id,
-          PlaysQuidditch = student.PlaysQuidditch,
-          SchoolHouseId = student.SchoolHouseId
-
-        };
-        return Ok(rv);
       }
     }
 

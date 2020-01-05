@@ -10,8 +10,8 @@ namespace HarryPotterApi.Models
     public string FullName { get; set; }
     public bool PlaysQuidditch { get; set; }
 
-    public int SchoolHouseId { get; set; }
+    public int StudentId { get; set; }
 
-    public SchoolHouse SchoolHouse { get; set; }
+    public Student Students { get; set; }
   }
 }

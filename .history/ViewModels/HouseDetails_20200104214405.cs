@@ -1,19 +1,15 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-
-namespace HarryPotterApi.Models
+namespace HarryPotterApi.ViewModels
 {
-  public class SchoolHouse
+  public class HouseDetails
   {
     public int Id { get; set; }
     public string HouseName { get; set; }
     public string Color { get; set; }
 
-
-    public List<Student> Students { get; set; }
+    public List<Student> students { get; set; }
       = new List<Student>();
 
   }
-
 }

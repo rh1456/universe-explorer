@@ -4,14 +4,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HarryPotterApi.Models
 {
-  public class Student
+  public class SchoolHouse
   {
     public int Id { get; set; }
-    public string FullName { get; set; }
-    public bool PlaysQuidditch { get; set; }
+    public string HouseName { get; set; }
+    public string Color { get; set; }
 
     public int SchoolHouseId { get; set; }
 
-    public SchoolHouse SchoolHouse { get; set; }
+    public List<Student> Students { get; set; }
+      = new List<Student>();
+
   }
+
 }

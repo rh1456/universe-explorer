@@ -48,16 +48,6 @@ namespace HarryPotterApi.Controllers
           PlaysQuidditch = viewModel.PlaysQuidditch,
           SchoolHouseId = viewModel.SchoolHouseId
         };
-        db.Students.Add(student);
-        db.SaveChanges();
-        var rv = new CreatedStudent
-        {
-          Id = student.Id,
-          PlaysQuidditch = student.PlaysQuidditch,
-          SchoolHouseId = student.SchoolHouseId
-
-        };
-        return Ok(rv);
       }
     }
 

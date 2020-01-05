@@ -31,34 +31,13 @@ namespace HarryPotterApi.Controllers
       }
     }
     [HttpPost]
-    public ActionResult CreateStudent(NewStudent viewModel)
+    public ActionResult CreateStudent(Student student)
     {
       var db = new DatabaseContext();
-      var schoolhouse = db.SchoolHouses
-        .FirstOrDefault(schoolhouse => schoolhouse.Id == viewModel.SchoolHouseId);
-      if (schoolhouse == null)
-      {
-        return NotFound();
-      }
-      else
-      {
-        var student = new Student
-        {
-          FullName = viewModel.FullName,
-          PlaysQuidditch = viewModel.PlaysQuidditch,
-          SchoolHouseId = viewModel.SchoolHouseId
-        };
-        db.Students.Add(student);
-        db.SaveChanges();
-        var rv = new CreatedStudent
-        {
-          Id = student.Id,
-          PlaysQuidditch = student.PlaysQuidditch,
-          SchoolHouseId = student.SchoolHouseId
-
-        };
-        return Ok(rv);
-      }
+      student.Id = 0;
+      db.Students.Add(student);
+      db.SaveChanges();
+      return Ok(student);
     }
 
     [HttpPut("{id}")]
